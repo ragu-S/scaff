@@ -1,0 +1,17 @@
+{
+  "name": "scaf",
+  "version": "1.0.0",
+  "description": "creates a component scaffold in components folder, adds its path to manifest file or directly to route, also adds a test scaffold in tests folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scaffolder"
+  ],
+  "author": "ragu",
+  "license": "ISC",
+  "dependencies": {
+    "args": "^3.0.2"
+  }
+}

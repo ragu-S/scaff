@@ -1,0 +1,123 @@
+.grid-dropdown {
+  position: relative;
+  text-align: center;
+  height: 6rem;
+  z-index: 10;
+  font-family: OpenSans-Bold;
+  text-transform: uppercase;
+  color: $darkGrey;
+
+  &.open {
+    .dropdown-list-wrapper {
+      height: 18rem;
+    }
+
+    .background-overlay {
+      opacity: 1;
+      pointer-events: initial;
+    }
+
+    .arrow-svg {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .dropdown-svg {
+    @include flex-center;
+    margin-right: 1rem;
+
+    &, svg {
+      width: 1.5rem;
+      height: 2rem;
+    }
+
+    svg {
+      stroke: $darkGrey;
+    }
+
+    &.category-chill, &.category-adventurous {
+      &, svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .arrow-svg {
+    position: absolute;
+    right: 2rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 1;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-out;
+
+    &, svg {
+      width: 2.2rem;
+      height: 2.2rem;
+      stroke: $darkGrey;
+    }
+  }
+
+  .background-overlay {
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .dropdown-selected {
+    width: 100%;
+    height: 6rem;
+    position: relative;
+
+    .center-content {
+      @include flex-center;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      height: 6rem;
+      background-color: rgba(255,255,255,0.9);
+      z-index: 1;
+      font-family: OpenSans-Bold;
+      font-size: 1.8rem;
+    }
+  }
+
+  .dropdown-list-wrapper {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 6rem;
+    width: 100%;
+    height: 0rem;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+
+
+    .dropdown-list {
+      height: 18rem;
+
+      li {
+        height: 6rem;
+        background-color: rgba(255,255,255,0.9);
+
+        .list-item-wrapper {
+          @include flex-center;
+          height: 100%;
+          width: 89%;
+          margin: 0 auto;
+          border-top: 1px solid rgba(0,0,0,0.1);
+          font-family: OpenSans-Bold;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

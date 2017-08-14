@@ -19,7 +19,7 @@ export default class {{componentName}} extends React.Component {
   componentWillUnmount() {}
 
   render() {
-    <div className={`{{componentName}} ${this.props.className}`}>
+    return <div className={`{{componentName}} ${this.props.className}`}>
         This is {{componentName}} (React component)
     </div>
   }
